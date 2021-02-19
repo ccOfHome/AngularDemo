@@ -1,0 +1,19 @@
+p {
+  color: red;
+}
+
+/*选择组件宿主元素中的元素（相对于组件模板内部的元素）*/
+:host {
+  display: block;
+  background: yellow;
+}
+
+:host(.active) {
+  display: block;
+  background: green;
+}
+
+:host-context(.italic) p{
+    display: block;
+    background: black;
+  }

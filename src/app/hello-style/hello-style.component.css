@@ -1,0 +1,10 @@
+/* p {
+  font-size: 48px;
+}
+
+* {
+  color: blue;
+} */
+
+/* 方式六 */
+@import url('../../assets/global.component.css');

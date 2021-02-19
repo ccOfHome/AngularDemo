@@ -1,0 +1,42 @@
+<!--form表单-->
+<!-- <input type="text" [(ngModel)]="user.name" name="name" required #spy>
+<p>名字：{{user.name}} - {{spy.className}}</p> -->
+
+
+<!--模板驱动表单校验-->
+<!-- <input type="text" [(ngModel)]="user1.name" name="name1" required minlength="4" #name="ngModel">
+<p> valid: {{name.valid}} </p>
+<p> invalid: {{name.invalid}} </p>
+<p> dirty: {{name.dirty}} </p>
+<p> touched: {{name.touched}} </p>
+<p> errors: {{name.errors | json}} </p> -->
+
+<!--监听表单提交-->
+<!-- <form (ngSubmit)="onSubmit()">
+    <input type="text" [(ngModel)]="user2.name" name="name2" required minlength="4" appForbiddenName="Tim" #name="ngModel">
+    <button type="submit" [disabled]="!name.valid">提交</button>
+</form> -->
+
+
+<!--响应式表单-->
+<!--
+    formGroup： 表单
+    formControlName： 输入元素
+-->
+<!-- <form [formGroup]="myGroup" (ngSubmit)="onSubmit1()">
+    <input type="text" name="name" formControlName="name">
+    <input type="text" name="pwd" formControlName="pwd">
+    <button type="submit">提交</button>
+</form> -->
+
+<!--自定义校验-->
+<!-- <form [formGroup]="myGroup" (ngSubmit)="onSubmit1()">
+    <input type="text" name="name" formControlName="name">
+    <input type="text" name="pwd" formControlName="pwd">
+    <button type="submit">提交</button>
+</form>
+<p> errors: {{ myGroup['errors'] | json}} </p> -->
+
+<!--模板引用-->
+<input type="text" [(ngModel)]="user.name" name="name" required minlength="4" appForbiddenName="Tim" #name="ngModel">
+<p> errors: {{ name['errors'] | json}} </p>

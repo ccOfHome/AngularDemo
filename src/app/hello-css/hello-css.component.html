@@ -1,0 +1,49 @@
+<!--[style.属性值]和[ngStyle]-->
+
+<!--形式1-->
+<p [style.color]="'red'">
+    hello-css works!
+</p>
+
+<p [style.color]="true?'blue':'red'">
+    hello-css works!
+</p>
+
+<!--带单位-->
+<button [style.font-size.px]="20">Red</button>
+<button [style.font-size.em]="2">Red</button>
+<button [style.font-size.%]="100">Red</button>
+<hr>
+
+<p [ngStyle]="{'color': 'yellow', 'font-size': '40px'}">
+    hello-css works!
+</p>
+<p [ngStyle]="cssObj">
+    hello-css works!666
+</p>
+<hr>
+
+<!--class和[class]-->
+<p class="container">
+    hello-css works!999
+</p>
+<p [class]="'container'">
+    hello-css works!969
+</p>
+
+<!--通过[class]形式可以做样式的逻辑判断-->
+<p class="box" [class.container]="true">
+    hello-css works!989
+</p>
+<p class="box" [class.container]="false">
+    hello-css works!989
+</p>
+<!--注意区别ngClass-->
+<p [ngClass]="{'box': false, 'bg': true}">
+    hello-css works!929
+</p>
+
+<!--不需要编译-->
+<div ngNonBindable>
+    使用 {{content}} 获取值
+</div>

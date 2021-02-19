@@ -1,0 +1,23 @@
+<!--使用双向数据绑定-->
+<div>
+    <input type="text" [(ngModel)]="text">
+    <button (click)="show()">按钮</button>
+</div>
+
+
+<!--使用模板变量 #var-->
+<div>
+    <input type="text" #phone>
+    <button (click)="show2(phone.value)">按钮</button>
+</div>
+<div>
+    <input type="text" ref-phone1>
+    <button (click)="show2(phone1.value)">按钮</button>
+</div>
+
+<!--安全导航符 ?.-->
+{{people?.name}}
+<!--使用判断-->
+<div *ngIf="people != null">
+    {{people.name}}
+</div>

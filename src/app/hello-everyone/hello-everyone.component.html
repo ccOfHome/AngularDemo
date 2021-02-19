@@ -1,0 +1,33 @@
+<!-- *ngIf -->
+<p *ngIf="flag">
+    显示组件
+</p>
+
+<p *ngIf="!flag">
+    不显示组件
+</p>
+<hr>
+<!-- *ngFor -->
+<ul>
+    <li *ngFor="let city of citys">{{city}}</li>
+</ul>
+<hr>
+<!-- *ngFor全特性 -->
+<ul>
+    <li *ngFor="let fruit of fruits; let i=index; let odd=odd; trackBy:trackByIndex">
+        名称：{{fruit.name}} - 索引：{{i}} - 偶数行：{{odd}}
+    </li>
+</ul>
+
+<!--NgSwitch指令由NgSwitch NgSwitchCase NgSwitchDefault组成-->
+<div [ngSwitch]="char">
+    <p *ngSwitchCase="'A'">
+        AAAAAAAAAAA
+    </p>
+    <p *ngSwitchCase="'B'">
+        BBBBBBBBBBB
+    </p>
+    <p *ngSwitchDefault>
+        00000000000
+    </p>
+</div>

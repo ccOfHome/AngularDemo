@@ -1,0 +1,11 @@
+<!--双向数据绑定[(ngModel)]-->
+<div>
+    <input type="text" [(ngModel)]="text"/>
+    <h3>{{text}}</h3>
+</div>
+
+<!--手动实现双向数据绑定 change keyup input事件-->
+<div>
+    <input type="text" [value]="num" (input)="changeValue($event)"/>
+    <h3>{{num}}</h3>
+</div>

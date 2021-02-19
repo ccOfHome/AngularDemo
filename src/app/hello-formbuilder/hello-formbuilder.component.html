@@ -1,0 +1,39 @@
+<!---->
+<h3>Basic Form</h3>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="">姓名：</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div>
+        <label for="">密码：</label>
+        <input type="text" formControlName="pwd">
+    </div>
+    <div formGroupName="address">
+        <div>
+            <label for="">街道：</label>
+            <input type="text" formControlName="street">
+        </div>
+        <div>
+            <label for="">城市：</label>
+            <input type="text" formControlName="city">
+        </div>
+    </div>
+    <button type="button" (click)="forceReset()">重置为空</button>
+    <button type="button" (click)="defaultReset()">重置默认数据</button>
+    <input type="submit" value="提交">
+    <!--setValue 全部更改-->
+    <button (click)="setFormValue()">setValue</button>
+    <!--patchValue 部分更改-->
+    <button (click)="patchFormValue()">patchValue</button>
+</form>
+<div>
+    <p> {{userForm.value | json}} </p>
+    <p> {{userForm.get('name').value}} </p>
+    <p> {{userForm.get('pwd').value}} </p>
+    <p> {{userForm.get('address.street').value}} </p>
+    <p> {{userForm.get('address.city').value}} </p>
+    <p> {{userForm.status}} </p>
+    <p> {{userForm.pristine}} </p>
+    <p> {{userForm.untouched}} </p>
+</div>
